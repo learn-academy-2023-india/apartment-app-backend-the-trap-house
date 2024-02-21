@@ -6,8 +6,8 @@ class User < ApplicationRecord
          
   devise :database_authenticatable, :registerable,
          :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
-  
-          devise :database_authenticatable, :registerable,
+         has_many :apartments
+  devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
           has_many :apartments               
 end
